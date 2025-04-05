@@ -1,0 +1,1 @@
+This repository serves as a collection of the exercises, problems, and projects that I encountered while learning JavaScript.
