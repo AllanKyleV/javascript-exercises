@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+<body>
+    <main>
+        <!-- HTML -->
+        <input id="textBox" type="text" />
+        <div id="output"></div>
+    </main>
+
+    <script>
+        // JavaScript
+        const textBox = document.querySelector("#textBox");
+        const output = document.querySelector("#output");
+
+        textBox.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+            output.textContent = "You pressed Enter. Submitting...";
+            } else if (event.key === " ") {
+            output.textContent = "You pressed the spacebar!";
+            } else {
+            output.textContent = `You pressed "${event.key}".`;
+            }
+
+        });
+
+    </script>
+</body>
+</html>
