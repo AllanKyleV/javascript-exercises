@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 id="heading">Items</h1>
+            <p id="first">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet.</p>
+            <p id="second">Another Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem, nobis.</p>
+            <p id="fourth">Another one Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis laudantium magni rem.</p>
+        </header>
+        <ul>
+            <li class="list-item">First Item</li>
+            <li class="list-item">Second Item</li>
+            <li class="list-item">Third Item</li>
+            <li class="list-item">Fourth Item</li>
+        </ul> 
+    </div>
+<!--
+    <script>
+        // Document GetElementByID
+        let heading = document.getElementById('heading');
+        heading.innerHTML = 'This is the <span>title</span>';
+        // heading.innerText = 'This is the <span>title</span>';
+        heading.setAttribute('title', 'This is a good heading.'); // Set attribute
+        heading.title = 'This is the new value'; // Set value
+
+        let parags = document.getElementsByTagName('p');
+        console.log(parags)
+
+        let lists = document.getElementsByClassName('list-item');
+        console.log(lists)
+
+        for (let i = 0; i < lists.length; i++) {
+            if (i % 2 === 0) {
+                lists[i].style.color = 'blue';
+            } else {
+                lists[i].style.color = 'red'
+            }
+        }
+
+        function faceIn() {
+            
+        }
+
+        faceIn
+        title.style.fontWeight = 'bold'
+    </script>
+-->
+
+    <script>
+        // getElementByID()
+        let title = document.getElementById('heading')
+        title.innerHTML = 'This is the title'.toUpperCase();
+        title.style.color = 'blue';
+        title.style.textAlign = 'center';
+        title.style.fontFamily = 'Arial, sans-serif';
+        title.style.fontSize = '32px';
+        title.style.fontWeight = '800';
+        // getElementByTagname()
+        // getElementByClassName()
+    </script>
+</body>
+</html>

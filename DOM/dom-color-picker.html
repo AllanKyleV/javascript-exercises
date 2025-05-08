@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DOM Color Picker</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+    }
+
+    #color-box {
+      width: 200px;
+      height: 200px;
+      border: 2px solid #000;
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: white;
+    }
+
+    input {
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      margin-left: 0.5rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>DOM Color Picker</h1>
+
+  <input type="text" id="color-input" placeholder="Enter a color..." />
+  <button id="apply-color-btn">Apply Color</button>
+
+  <div id="color-box">Color Box</div>
+
+  <!-- JS Script -->
+  <script>
+      const colorInput = document.querySelector('#color-input');
+      const applyColorBtn = document.querySelector('#apply-color-btn');
+      const colorBox = document.querySelector('#color-box');
+
+      applyColorBtn.addEventListener('click', () => {
+        const value = colorInput.value.trim();
+
+        colorBox.style.backgroundColor = value;
+        colorBox.textContent = value;
+        ColorInput.value = '';
+      })
+  </script>
+</body>
+</html>

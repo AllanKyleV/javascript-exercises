@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enhanced DOM Todo List</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+    }
+
+    #todo-list {
+      margin-top: 1rem;
+    }
+
+    input {
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      margin-left: 0.5rem;
+      cursor: pointer;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      padding: 0.5rem;
+      background-color: #f0f0f0;
+    }
+
+    li.done {
+      text-decoration: line-through;
+      color: green;
+    }
+
+    .task-actions button {
+      margin-left: 0.5rem;
+    }
+
+    .task-actions {
+      display: flex;
+      gap: 5px;
+    }
+    
+    .done-btn {
+      background-color: green;
+      color: white;
+    }
+
+    .remove-btn {
+      background-color: red;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Enhanced DOM Todo List</h1>
+
+  <input type="text" id="task-input" placeholder="Enter a task..." />
+  <button id="add-task-btn">Add Task</button>
+
+  <div id="todo-list">
+    <!-- Tasks will be added here dynamically -->
+  </div>
+
+  <!-- JS script -->
+  <script>
+    const inputTask = document.querySelector('#task-input');
+    const addTaskBtn = document.querySelector('#add-task-btn');
+    const todoList = document.querySelector('#todo-list');
+
+    // Create Task list
+    const taskList = document.createElement('ul');
+    todoList.appendChild(taskList);
+
+    addTaskBtn.addEventListener('click', () => {
+        const value = inputTask.value;
+
+        // Create and add task
+        if (value !== '') {
+            const newTask = document.createElement('li');
+            newTask.textContent = value;
+            taskList.appendChild(newTask);
+            inputTask.value = '';
+        }
+
+        // Edit task 
+        newTask.addEventListener('click', () => {
+            newTask.style.color = 'red';
+        })
+    })
+    </script>
+</body>
+</html>

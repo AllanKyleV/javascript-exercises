@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DOM To-Do Challenge</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+    }
+
+    input {
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      margin-left: 0.5rem;
+      cursor: pointer;
+    }
+
+    ul {
+      margin-top: 1rem;
+      padding-left: 1.2rem;
+    }
+
+    li {
+      cursor: pointer;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>DOM To-Do Challenge</h1>
+
+  <input type="text" id="task-input" placeholder="Enter a task..." />
+  <button id="add-task-btn">Add Task</button>
+
+  <p id="placeholder">No tasks yet</p>
+
+  <!-- You will insert <h2>My Tasks</h2> and <ul> here using JS -->
+  <div id="task-section"></div>
+
+  <script>
+    const input = document.querySelector('#task-input');
+    const addTaskBtn = document.querySelector('#add-task-btn');
+    const taskSection = document.querySelector('#task-section');
+    const placeholder = document.querySelector('#placeholder');
+  
+    let taskList;
+    let heading;
+    let headingAdded = false;
+  
+    addTaskBtn.addEventListener('click', () => {
+      const value = input.value.trim().toLowerCase();
+  
+      if (value !== '') {
+        if (!taskList) {
+          taskList = document.createElement('ul');
+          taskSection.appendChild(taskList);
+        }
+  
+        if (!headingAdded) {
+          heading = document.createElement('h2');
+          heading.textContent = 'My Tasks';
+          document.body.replaceChild(heading, placeholder);
+          headingAdded = true;
+        }
+  
+        const newTask = document.createElement('li');
+        newTask.textContent = value;
+        taskList.appendChild(newTask);
+        input.value = '';
+  
+        newTask.addEventListener('click', () => {
+          taskList.removeChild(newTask);
+  
+          // ✅ Check after removing
+          if (taskList.children.length === 0) {
+            document.body.replaceChild(placeholder, heading);
+            headingAdded = false;
+            taskList.remove();
+            taskList = null;
+          }
+        });
+      }
+    });
+  </script>
+  
+</body>
+</html>
