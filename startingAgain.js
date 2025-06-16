@@ -40,7 +40,7 @@ function isPalindrome(str) {
     // } else {
     //     return false;
     // }
-    return str === str.split('').reverse().join('');
+    return str === str.replace(/\s+/g, '').split('').reverse().join('');
 }
 console.log(isPalindrome('racecar'));
 console.log(isPalindrome('hello'));
