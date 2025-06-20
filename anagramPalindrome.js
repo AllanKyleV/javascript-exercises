@@ -13,6 +13,7 @@ console.log(anagramPalindrome('civic'));
 console.log(anagramPalindrome('ivicc'));
 console.log(anagramPalindrome('hello'));
 console.log(anagramPalindrome('aabb'));
+console.log(anagramPalindrome('aabbc'));
 
 // Pseudocode: to tell if its a palindrome, the original string and the reversed string should be equal.
 
@@ -25,4 +26,4 @@ console.log(anagramPalindrome('aabb'));
 // Option II: Series of conditions.
 // A string can form a palindrome if at most one character appears an odd number of times (in case of odd-length strings).
 
-// modified  
+// modified   
