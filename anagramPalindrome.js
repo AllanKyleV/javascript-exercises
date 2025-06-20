@@ -3,7 +3,7 @@ function anagramPalindrome(str) {
     // return false;
 
     const arr = str.split('');
-
+ 
     
 
     console.log(arr)
