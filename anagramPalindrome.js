@@ -2,20 +2,16 @@ function anagramPalindrome(str) {
     // if (str === str.split('').reverse().join('')) return true;
     // return false;
 
-    let result = [];
+    const arr = str.split('');
 
-    for (let char of str.split('')) {
-        result.unshift(char);
+    count = 0;
+
+    for (let item of arr) {
+        if(!arr.includes(item)) {
+            console.log(item)
+        }
     }
-
-    if (str === result.join('')) return true;
-    return false;
-
-    // const arr = str.split('');
-
-
-
-    console.log(arr)
+    
 }
 
 console.log(anagramPalindrome('civic'));
@@ -35,4 +31,4 @@ console.log(anagramPalindrome('aabbc'));
 // Option II: Series of conditions.
 
 // A string can form a palindrome if at most one character appears an odd number of times (in case of odd-length strings).
-// Get the number on how many times the items appers on the string, find the odd numbers, if more than one odd number then it's not an anagram palindrome.
+// Get the number on how many times the items appers on the string, find the odd numbers, if more than one odd number then it's not an anagram palindrome. 
