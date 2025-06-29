@@ -1,16 +1,8 @@
 function removeSmallest(arr) {
-
-    let baseNum = 0;
-    for (let num of arr) {
-        if (num === arr[0]) baseNum = num;
-        if (num < baseNum) baseNum = num;
-    }
-
-    if (arr.includes(baseNum)) {
-        arr.splice(arr.indexOf(baseNum), 1);
-    }
-
-    return arr;
+    let smallest = arr[0];
+    const result = [...arr];
+    result.splice(result.indexOf(smallest), 1);
+    return result;
 }
 
 console.log(removeSmallest([5, 3, 2, 1, 4]));
@@ -21,3 +13,20 @@ console.log(removeSmallest([1, 2, 3, 1]));
 
 //      New Goal: remove the smallest number in the array and return the new array.
 // Pseducode: Since I already started the code,the good thing is that I found the smallest number. Next is the remove that number in the array.
+
+//  Find the smallest number:
+//  Remove it from the array:
+//  Return the new array:
+
+// First Solution:
+// let baseNum = 0;
+    // for (let num of arr) {
+    //     if (num === arr[0]) baseNum = num;
+    //     if (num < baseNum) baseNum = num;
+    // }
+
+    // if (arr.includes(baseNum)) {
+    //     arr.splice(arr.indexOf(baseNum), 1);
+    // }
+
+    // return arr;
